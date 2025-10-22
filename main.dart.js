@@ -89894,7 +89894,7 @@ return null}}
 A.Nc.prototype={
 R(a){var s=null,r=A.hY().$0().d,q=A.aRN(A.S(a).ok),p=A.hY().$3$fontSize$fontWeight$letterSpacing(32,B.b3,-0.5),o=A.hY().$3$fontSize$fontWeight$letterSpacing(28,B.aq,-0.25),n=A.hY().$3$fontSize$fontWeight$letterSpacing(24,B.aq,0),m=A.hY().$3$fontSize$fontWeight$letterSpacing(20,B.aq,0),l=A.hY().$3$fontSize$fontWeight$letterSpacing(16,B.aq,0.15),k=A.hY().$3$fontSize$fontWeight$letterSpacing(14,B.aq,0.1)
 k=q.anB(A.hY().$4$fontSize$fontWeight$height$letterSpacing(16,B.n,1.5,0.15),A.hY().$4$fontSize$fontWeight$height$letterSpacing(14,B.n,1.4,0.25),A.hY().$4$fontSize$fontWeight$height$letterSpacing(12,B.n,1.3,0.4),p,o,n,A.hY().$3$fontSize$fontWeight$letterSpacing(14,B.M,0.1),A.hY().$3$fontSize$fontWeight$letterSpacing(12,B.M,0.5),A.hY().$3$fontSize$fontWeight$letterSpacing(10,B.M,0.5),m,l,k)
-return new A.AG(B.Bd,"My Website",A.vE(A.aDl(B.l,!0,s,s,0,B.k,A.hY().$4$color$fontSize$fontWeight$letterSpacing(B.k,18,B.aq,0)),s,new A.oY(s,s,s,s,2,s,new A.ch(A.c1(12),B.m)),s,r,B.am,k,s),!1,s)}}
+return new A.AG(B.Bd,"HBTnews",A.vE(A.aDl(B.l,!0,s,s,0,B.k,A.hY().$4$color$fontSize$fontWeight$letterSpacing(B.k,18,B.aq,0)),s,new A.oY(s,s,s,s,2,s,new A.ch(A.c1(12),B.m)),s,r,B.am,k,s),!1,s)}}
 A.dB.prototype={
 H(){return"BlogCategory."+this.b}}
 A.iO.prototype={
