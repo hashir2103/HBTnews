@@ -1,6 +1,6 @@
 {
-    "name": "HBTnews",
-    "short_name": "HBTnews",
+    "name": "HBTinsights",
+    "short_name": "HBTinsights",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#2B5876",
