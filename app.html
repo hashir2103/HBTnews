@@ -7,32 +7,9 @@
   <title>HBTinsights Admin</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="manifest" href="manifest.json">
-  <script>
-    // Check if Flutter files exist, if not show error
-    window.addEventListener('load', function() {
-      // Try to load Flutter
-      if (typeof _flutter === 'undefined') {
-        var script = document.createElement('script');
-        script.src = 'flutter.js';
-        script.onerror = function() {
-          document.body.innerHTML = '<div style="padding: 40px; text-align: center; font-family: Arial, sans-serif;"><h1>Flutter App Not Available</h1><p>The Flutter application files are not deployed. Please build and deploy the Flutter web app.</p><p><a href="/">Go to Home</a></p></div>';
-        };
-        script.onload = function() {
-          // Flutter.js loaded, now load bootstrap
-          var bootstrap = document.createElement('script');
-          bootstrap.src = 'flutter_bootstrap.js';
-          bootstrap.onerror = function() {
-            document.body.innerHTML = '<div style="padding: 40px; text-align: center; font-family: Arial, sans-serif;"><h1>Flutter Bootstrap Not Found</h1><p>Please ensure flutter_bootstrap.js is deployed.</p><p><a href="/">Go to Home</a></p></div>';
-          };
-          document.head.appendChild(bootstrap);
-        };
-        document.head.appendChild(script);
-      }
-    });
-  </script>
 </head>
 <body>
-  <p style="font-family: Arial, sans-serif; padding: 20px;">Loading Flutter app...</p>
+  <p>Loading...</p>
   <script src="flutter.js" defer></script>
   <script src="flutter_bootstrap.js" defer></script>
 </body>
