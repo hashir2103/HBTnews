@@ -1,387 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <base href="$FLUTTER_BASE_HREF">
-  <script>
-    (function() {
-      var path = window.location.pathname;
-      if (path === '/admin_panel_settings' || path === '/admin_panel_settings/' || 
-          path.indexOf('/admin_panel_settings') !== -1) {
-        window.location.href = '/app.html?adminlogin';
-        return;
-      }
-    })();
-  </script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="HBTinsights - Your source for in-depth analysis and insights on economics, technology, entertainment, and health. Stay informed with expert articles, breaking news, and comprehensive coverage of the topics that matter most.">
-  <meta name="keywords" content="economics news, technology insights, entertainment news, health articles, business analysis, tech trends, global economy, digital health">
-  <meta name="author" content="HBTinsights">
-  
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="HBTinsights - Economics, Technology, Entertainment & Health News">
-  <meta property="og:description" content="Expert analysis and insights on economics, technology, entertainment, and health. Stay informed with quality journalism and in-depth coverage.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://hbtinsights.com">
-  <meta property="og:site_name" content="HBTinsights">
-  
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="HBTinsights - Economics, Technology, Entertainment & Health News">
-  <meta name="twitter:description" content="Expert analysis and insights on economics, technology, entertainment, and health.">
-  
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://hbtinsights.com">
-  
-  <!-- SEO Meta Tags -->
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <meta name="language" content="English">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png">
-  
-  <!-- Structured Data - Organization Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "NewsMediaOrganization",
-    "name": "HBTinsights",
-    "url": "https://hbtinsights.com",
-    "logo": "https://hbtinsights.com/icons/Icon-192.png",
-    "description": "HBTinsights provides comprehensive analysis and insights on economics, technology, entertainment, and health.",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "email": "hashirtahir2103@gmail.com",
-      "contactType": "Customer Service"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "HBTinsights",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://hbtinsights.com/icons/Icon-192.png"
-      }
-    }
-  }
-  </script>
-  
-  <!-- Structured Data - WebSite Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "HBTinsights",
-    "url": "https://hbtinsights.com",
-    "description": "Your source for in-depth analysis and insights on economics, technology, entertainment, and health.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://hbtinsights.com/?s={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-  
-  <title>HBTinsights - Economics, Technology, Entertainment & Health News</title>
-  
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-      line-height: 1.6;
-      color: #374151;
-      background-color: #ffffff;
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    
-    header {
-      background-color: #000000;
-      color: #ffffff;
-      padding: 20px 0;
-      margin-bottom: 40px;
-    }
-    
-    .header-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    
-    .logo {
-      background-color: #dc2626;
-      color: #ffffff;
-      padding: 8px 12px;
-      border-radius: 4px;
-      font-weight: bold;
-      font-size: 18px;
-      text-decoration: none;
-    }
-    
-    nav { display:flex; gap: 16px; flex-wrap: wrap; }
-    nav a { color:#ffffff; text-decoration:none; font-weight:500; transition: color 0.3s; }
-    
-    nav a:hover {
-      color: #dc2626;
-    }
-    
-    h1 {
-      color: #dc2626;
-      font-size: 36px;
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
-    
-    h2 {
-      color: #1f2937;
-      font-size: 28px;
-      margin-top: 40px;
-      margin-bottom: 20px;
-      font-weight: 600;
-      border-bottom: 3px solid #dc2626;
-      padding-bottom: 10px;
-    }
-    
-    h3 {
-      color: #dc2626;
-      font-size: 22px;
-      margin-top: 30px;
-      margin-bottom: 15px;
-      font-weight: 600;
-    }
-    
-    .intro {
-      font-size: 18px;
-      color: #4b5563;
-      line-height: 1.8;
-      margin-bottom: 40px;
-      padding: 20px;
-      background-color: #f9fafb;
-      border-radius: 8px;
-      border-left: 4px solid #dc2626;
-    }
-    
-    .category-section {
-      margin-bottom: 50px;
-      padding: 30px;
-      background-color: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    
-    .category-section p {
-      font-size: 16px;
-      color: #4b5563;
-      line-height: 1.8;
-      margin-bottom: 15px;
-    }
-    
-    .category-section ul {
-      margin-left: 20px;
-      margin-top: 15px;
-    }
-    
-    .category-section li {
-      margin-bottom: 10px;
-      color: #4b5563;
-      line-height: 1.6;
-    }
-    
-    .content-highlight {
-      background-color: #f3f4f6;
-      padding: 25px;
-      border-radius: 8px;
-      margin: 30px 0;
-      border-left: 4px solid #dc2626;
-    }
-    
-    .content-highlight p {
-      font-size: 17px;
-      line-height: 1.8;
-      color: #374151;
-      margin: 0;
-    }
-    
-    footer {
-      background-color: #1f2937;
-      color: #ffffff;
-      padding: 40px 20px;
-      margin-top: 60px;
-      text-align: center;
-    }
-    
-    footer a {
-      color: #dc2626;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-    
-    footer a:hover {
-      text-decoration: underline;
-    }
-    
-    .footer-links {
-      margin-bottom: 20px;
-    }
-    
-    .meta-info {
-      color: #6b7280;
-      font-size: 14px;
-      margin-top: 30px;
-      padding-top: 20px;
-      border-top: 1px solid #e5e7eb;
-    }
-    
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 28px;
-      }
-      
-      h2 {
-        font-size: 24px;
-      }
-      
-      .container {
-        padding: 15px;
-      }
-      
-      .category-section {
-        padding: 20px;
-      }
-      
-      nav {
-        gap: 15px;
-        font-size: 14px;
-      }
-    }
-  </style>
-  
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1059342231343027"
-       crossorigin="anonymous"></script>
-  
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9EX8SG16XW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-9EX8SG16XW');
-  </script>
-  
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Happy Birthday, Nimra</title>
+  <meta name="theme-color" content="#12030a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
-  <header>
-    <div class="header-content">
-      <div style="display:flex; align-items:center; flex-wrap:wrap;">
-        <a href="/" class="logo">HBTinsights</a>
-        <nav style="margin-left:16px;">
-          <a href="/">Home</a>
-          <a href="/categories/economic.html">Economics</a>
-          <a href="/categories/tech.html">Technology</a>
-          <a href="/categories/entertainment.html">Entertainment</a>
-          <a href="/categories/health.html">Health</a>
-        </nav>
-      </div>
-      <nav>
-        <a href="/about.html">About</a>
-        <a href="/contact.html">Contact</a>
-        <a href="/privacy.html">Privacy</a>
-      </nav>
-    </div>
-  </header>
-  
-  <div class="container">
-    <h1>Welcome to HBTinsights</h1>
-    
-    <div class="intro">
-      <p><strong>HBTinsights</strong> is your trusted source for comprehensive news and analysis covering economics, technology, entertainment, and health. We deliver in-depth articles, expert insights, and breaking news to keep you informed about the topics that matter most in today's world.</p>
-      <p>Our mission is to provide high-quality journalism with expert analysis and insights to help you understand complex issues and stay ahead of current trends.</p>
-    </div>
-    
-    <h2>Our Content Categories</h2>
-    
-    <div class="category-section">
-      <h3>📊 Economics</h3>
-      <p>Stay updated with the latest economic trends, market analysis, financial insights, and business developments shaping the global economy. Our expert analysis helps you understand complex economic issues, policy changes, market movements, and their impact on businesses and individuals.</p>
-      <div class="content-highlight">
-        <p>We cover topics including macroeconomic trends, financial markets, economic policy, business strategy, international trade, economic indicators, market analysis, and investment insights. Our economics section provides comprehensive coverage of how economic forces shape the world around us.</p>
-      </div>
-      <p>Whether you're interested in understanding inflation, unemployment, GDP growth, or international economics, our articles break down complex concepts into accessible insights.</p>
-      <p style="margin-top:12px;"><a href="/categories/economic.html" style="color:#dc2626; text-decoration:underline;">View Economics articles →</a></p>
-    </div>
-    
-    <div class="category-section">
-      <h3>💻 Technology</h3>
-      <p>Discover the latest in tech innovation, software development, artificial intelligence, cybersecurity, and digital transformation. We cover emerging technologies and their impact on society, businesses, and everyday life.</p>
-      <div class="content-highlight">
-        <p>Our technology coverage includes software development trends, AI and machine learning breakthroughs, cybersecurity threats and solutions, cloud computing, blockchain technology, mobile app development, web technologies, and the latest gadgets and devices.</p>
-      </div>
-      <p>From startup innovations to enterprise solutions, we examine how technology is reshaping industries and changing the way we work, communicate, and live.</p>
-      <p style="margin-top:12px;"><a href="/categories/tech.html" style="color:#dc2626; text-decoration:underline;">View Technology articles →</a></p>
-    </div>
-    
-    <div class="category-section">
-      <h3>🎬 Entertainment</h3>
-      <p>Get the latest entertainment news, movie reviews, celebrity updates, music trends, and pop culture insights. Your go-to source for everything happening in the world of entertainment, from Hollywood to streaming platforms.</p>
-      <div class="content-highlight">
-        <p>We cover movies and film reviews, TV shows and streaming content, music releases and concerts, celebrity news and interviews, entertainment industry trends, gaming news, book releases, and cultural events.</p>
-      </div>
-      <p>Whether you're a film buff, music lover, or pop culture enthusiast, our entertainment section keeps you informed about what's trending and what's worth your attention.</p>
-      <p style="margin-top:12px;"><a href="/categories/entertainment.html" style="color:#dc2626; text-decoration:underline;">View Entertainment articles →</a></p>
-    </div>
-    
-    <div class="category-section">
-      <h3>🏥 Health</h3>
-      <p>Access reliable health information, wellness tips, medical breakthroughs, and expert advice on living a healthier life. We provide evidence-based health content you can trust, covering physical health, mental wellness, nutrition, fitness, and medical science.</p>
-      <div class="content-highlight">
-        <p>Our health section includes articles on nutrition and diet, exercise and fitness, mental health and wellness, medical research and breakthroughs, preventive care, chronic disease management, healthy lifestyle tips, and public health topics.</p>
-      </div>
-      <p>From understanding nutrition science to learning about the latest medical advances, our health articles empower you to make informed decisions about your wellbeing.</p>
-      <p style="margin-top:12px;"><a href="/categories/health.html" style="color:#dc2626; text-decoration:underline;">View Health articles →</a></p>
-    </div>
-    
-    <div class="content-highlight" style="margin-top: 50px;">
-      <p><strong>Why Choose HBTinsights?</strong></p>
-      <ul style="margin-top: 15px; padding-left: 20px;">
-        <li>Expert insights from knowledgeable writers and researchers</li>
-        <li>Up-to-date coverage of breaking news and current events</li>
-        <li>Multiple categories ensuring diverse content for every interest</li>
-        <li>Regular updates with fresh articles published frequently</li>
-        <li>Quality journalism you can trust</li>
-      </ul>
-    </div>
-    
-    <div class="meta-info">
-      <p><strong>About Our Content:</strong> All articles are carefully researched and written by our team of experienced writers. We strive to provide accurate, up-to-date information that helps readers understand complex topics and make informed decisions.</p>
-      <p style="margin-top: 10px;">For the best browsing experience with our interactive Flutter application, please visit our <a href="/">main website</a>. This static page provides an overview of our content that search engines can easily discover and index.</p>
-    </div>
+<body class="bg-gradient">
+  <canvas id="celebration-canvas"></canvas>
+  <div id="heart-container" aria-hidden="true"></div>
+
+  <div id="intro" class="intro" role="button" tabindex="0">
+    <p class="intro-kicker">POV : It's Her Birthday</p>
+    <p class="intro-emoji">💖 🫠</p>
+    <h1 class="intro-name">Nimra</h1>
+    <p class="intro-hint">tap anywhere to open your surprise</p>
   </div>
-  
-  <footer>
-    <div class="footer-links">
-      <a href="/">Home</a>
-      <a href="/about.html">About Us</a>
-      <a href="/contact.html">Contact</a>
-      <a href="/privacy.html">Privacy Policy</a>
-    </div>
-    <p>&copy; 2024 HBTinsights. All rights reserved.</p>
-    <p style="margin-top: 10px; font-size: 14px; color: #9ca3af;">Email: hashirtahir2103@gmail.com</p>
-  </footer>
+
+  <main id="app" class="app" hidden>
+    <button id="music-btn" class="music-btn glass" type="button" aria-label="Toggle music">♪</button>
+
+    <section id="page-home" class="page active" data-page="home">
+      <p class="kicker fade-in">POV : it's your birthday</p>
+      <h1 class="hero-title fade-in delay-1">Happy Birthday</h1>
+      <p class="hero-name fade-in delay-2">Nimra</p>
+      <p class="hero-sub fade-in delay-3" id="tagline"></p>
+
+      <button class="cake fade-in delay-4" id="cake-btn" type="button" aria-label="Make a wish">
+        <span class="cake-glow"></span>
+        <span class="flame f1"></span>
+        <span class="flame f2"></span>
+        <span class="flame f3"></span>
+        <span class="candle c1"></span>
+        <span class="candle c2"></span>
+        <span class="candle c3"></span>
+        <span class="layer top"></span>
+        <span class="layer mid"></span>
+        <span class="layer base"></span>
+        <span class="plate"></span>
+      </button>
+      <p class="cake-caption fade-in delay-5" id="cake-caption">Tap the cake. Make a wish.</p>
+    </section>
+
+    <section id="page-letter" class="page" data-page="letter">
+      <article class="letter glass">
+        <div class="seal">N</div>
+        <div id="letter-body" class="letter-body"></div>
+        <span class="cursor" id="letter-cursor">|</span>
+      </article>
+    </section>
+
+    <section id="page-memories" class="page" data-page="memories">
+      <h2 class="section-title">Our memories</h2>
+      <p class="section-sub">A few frames from the story I never want to end.</p>
+      <div class="memory-grid" id="memory-grid"></div>
+    </section>
+
+    <section id="page-reasons" class="page" data-page="reasons">
+      <h2 class="section-title">Reasons I love you</h2>
+      <p class="section-sub">A list that will never actually be finished.</p>
+      <ol class="reasons" id="reasons-list"></ol>
+    </section>
+
+    <nav id="main-nav" class="main-nav glass">
+      <button type="button" class="nav-btn active" data-page="home">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1v-8.5Z"/></svg>
+        Home
+      </button>
+      <button type="button" class="nav-btn" data-page="letter">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5v-11Zm2.2-.5 5.8 4.4L17.8 6H6.2Zm-.2 2.3V17.5c0 .3.2.5.5.5h11c.3 0 .5-.2.5-.5V8.3l-5.6 4.2a1.5 1.5 0 0 1-1.8 0L6 8.3Z"/></svg>
+        Letter
+      </button>
+      <button type="button" class="nav-btn" data-page="memories">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm1 12 3.8-4.4a1 1 0 0 1 1.5 0L14 16l1.2-1.4a1 1 0 0 1 1.5.1L20 17H6Zm2.5-7.5a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5Z"/></svg>
+        Memories
+      </button>
+      <button type="button" class="nav-btn" data-page="reasons">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.4-7-10.2A4.8 4.8 0 0 1 12 7a4.8 4.8 0 0 1 7 3.8C19 16.6 12 21 12 21Z"/></svg>
+        Reasons
+      </button>
+    </nav>
+  </main>
+
+  <audio id="bg-music" loop preload="none" src="audio/song.mp3"></audio>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
