@@ -107,10 +107,31 @@ body {
 .lock-screen {
   position: fixed;
   inset: 0;
-  z-index: 60;
-  display: grid;
+  z-index: 100;
+  display: none;
   place-content: center;
   padding: 24px;
+  background:
+    radial-gradient(ellipse 80% 55% at 50% 18%, rgba(228, 160, 81, 0.28), transparent 58%),
+    radial-gradient(ellipse 70% 50% at 50% 100%, rgba(251, 113, 133, 0.12), transparent 55%),
+    #12030a;
+}
+
+body.is-locked .lock-screen {
+  display: grid;
+}
+
+body.is-locked .intro,
+body.is-locked .app,
+body.is-locked #heart-container,
+body.is-locked #celebration-canvas {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+body:not(.is-locked) .lock-screen {
+  display: none !important;
 }
 
 .lock-screen.hide {
@@ -154,7 +175,7 @@ body {
   border-radius: 14px;
   padding: 14px 16px;
   font-size: 1.15rem;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.08em;
   text-align: center;
   outline: none;
   font-family: inherit;
@@ -201,8 +222,7 @@ body {
 }
 
 .intro[hidden],
-.app[hidden],
-.lock-screen[hidden] {
+.app[hidden] {
   display: none !important;
 }
 
@@ -307,6 +327,13 @@ body {
   padding-bottom: 12px;
 }
 
+#page-letter {
+  justify-content: flex-start;
+  height: auto;
+  min-height: 100%;
+  padding-bottom: 8px;
+}
+
 .kicker {
   font-family: "Playfair Display", serif;
   font-size: 1.05rem;
@@ -329,6 +356,36 @@ body {
   text-shadow: 0 0 28px rgba(252, 211, 77, 0.5);
   margin-top: -6px;
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.28em;
+}
+
+.hero-heart {
+  font-family: "Playfair Display", serif;
+  font-size: 0.42em;
+  color: var(--pink);
+  text-shadow: 0 0 16px rgba(251, 113, 133, 0.7);
+  animation: heartBeat 1.4s ease-in-out infinite;
+  line-height: 1;
+}
+
+.hero-heart:last-child {
+  animation-delay: 0.35s;
+}
+
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  40% { transform: scale(1.18); }
+  60% { transform: scale(0.96); }
+}
+
+.home-hearts {
+  margin-top: 10px;
+  font-size: 1.15rem;
+  letter-spacing: 0.35em;
+  animation: fadeIn 0.9s ease both;
 }
 
 .hero-sub {
@@ -458,24 +515,51 @@ body {
 
 .letter {
   width: min(520px, 100%);
-  min-height: 70%;
+  height: auto;
+  min-height: 0;
+  flex: 0 0 auto;
+  align-self: stretch;
+  max-width: 520px;
+  margin: 0 auto;
   border-radius: 22px;
   padding: 36px 28px 32px;
   position: relative;
+  overflow: visible;
+  box-sizing: border-box;
 }
 
 .seal {
-  width: 46px;
-  height: 46px;
-  margin: 0 auto 22px;
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 10px;
   border-radius: 50%;
   display: grid;
   place-items: center;
   font-family: "Playfair Display", serif;
   font-weight: 700;
+  font-size: 1.45rem;
   color: #12030a;
-  background: radial-gradient(circle at 35% 30%, #fde68a, var(--gold-deep));
-  box-shadow: 0 0 20px rgba(252, 211, 77, 0.45);
+  background: radial-gradient(circle at 35% 30%, #fda4af, #fb7185 55%, #e11d48);
+  box-shadow: 0 0 22px rgba(251, 113, 133, 0.55);
+  animation: heartBeat 1.6s ease-in-out infinite;
+}
+
+.letter-hearts,
+.letter-footer-hearts {
+  text-align: center;
+  color: var(--pink);
+  letter-spacing: 0.45em;
+  font-size: 0.95rem;
+  text-shadow: 0 0 12px rgba(251, 113, 133, 0.45);
+}
+
+.letter-hearts {
+  margin-bottom: 18px;
+}
+
+.letter-footer-hearts {
+  margin-top: 22px;
+  opacity: 0.9;
 }
 
 .letter-body {
@@ -483,8 +567,24 @@ body {
   font-size: 1.05rem;
   line-height: 1.75;
   font-style: italic;
-  min-height: 12em;
+  min-height: 0;
+  height: auto;
   white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  color: #ffe4ec;
+}
+
+.letter-body p:first-child {
+  color: var(--gold);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.letter-body p:last-child {
+  color: var(--gold);
+  font-style: normal;
+  margin-top: 0.4em;
 }
 
 .letter-body p + p { margin-top: 1em; }

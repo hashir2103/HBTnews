@@ -10,14 +10,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="bg-gradient">
+<body class="bg-gradient is-locked">
   <canvas id="celebration-canvas"></canvas>
   <div id="heart-container" aria-hidden="true"></div>
 
-  <div id="lock-screen" class="lock-screen">
+  <div id="lock-screen" class="lock-screen" aria-modal="true" role="dialog" aria-labelledby="lock-title">
     <form id="lock-form" class="lock-card glass" autocomplete="off">
       <p class="lock-kicker">A little surprise</p>
-      <h1 class="lock-title">Enter the passcode</h1>
+      <h1 id="lock-title" class="lock-title">Enter the passcode</h1>
       <p class="lock-hint">Only for someone special.</p>
       <label class="sr-only" for="passcode-input">Passcode</label>
       <input
@@ -35,7 +35,7 @@
     </form>
   </div>
 
-  <div id="intro" class="intro" role="button" tabindex="0" hidden>
+  <div id="intro" class="intro" role="button" tabindex="0">
     <p class="intro-kicker">POV : It's Her Birthday</p>
     <p class="intro-emoji">💖 🫠</p>
     <h1 class="intro-name">Nimra</h1>
@@ -48,8 +48,13 @@
     <section id="page-home" class="page active" data-page="home">
       <p class="kicker fade-in">POV : it's your birthday</p>
       <h1 class="hero-title fade-in delay-1">Happy Birthday</h1>
-      <p class="hero-name fade-in delay-2">Nimra</p>
+      <p class="hero-name fade-in delay-2">
+        <span class="hero-heart" aria-hidden="true">♥</span>
+        Nimra
+        <span class="hero-heart" aria-hidden="true">♥</span>
+      </p>
       <p class="hero-sub fade-in delay-3" id="tagline"></p>
+      <p class="home-hearts fade-in delay-3" aria-hidden="true">💕 💖 💕</p>
 
       <button class="cake fade-in delay-4" id="cake-btn" type="button" aria-label="Make a wish">
         <span class="cake-glow"></span>
@@ -69,9 +74,11 @@
 
     <section id="page-letter" class="page" data-page="letter">
       <article class="letter glass">
-        <div class="seal">N</div>
+        <div class="seal" aria-hidden="true">♥</div>
+        <p class="letter-hearts" aria-hidden="true">♡ 💕 ♡</p>
         <div id="letter-body" class="letter-body"></div>
         <span class="cursor" id="letter-cursor">|</span>
+        <p class="letter-footer-hearts" aria-hidden="true">♥ ∞ ♥</p>
       </article>
     </section>
 

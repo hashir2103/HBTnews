@@ -19,37 +19,35 @@
   const unlockKey = "nimra-birthday-unlocked";
 
   document.getElementById("tagline").textContent = CONFIG.tagline;
+  sessionStorage.removeItem(unlockKey);
+  document.body.classList.add("is-locked");
 
   function unlockSite() {
-    sessionStorage.setItem(unlockKey, "1");
+    document.body.classList.remove("is-locked");
     lockScreen.classList.add("hide");
-    intro.hidden = false;
-    setTimeout(() => lockScreen.remove(), 550);
+    setTimeout(() => {
+      if (lockScreen.parentNode) lockScreen.remove();
+    }, 550);
   }
 
   function checkPasscode(value) {
     return String(value || "").trim().toLowerCase() === String(CONFIG.passcode || "").trim().toLowerCase();
   }
 
-  if (sessionStorage.getItem(unlockKey) === "1") {
-    lockScreen.remove();
-    intro.hidden = false;
-  } else {
-    lockForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (checkPasscode(passcodeInput.value)) {
-        lockError.hidden = true;
-        unlockSite();
-      } else {
-        lockError.hidden = false;
-        passcodeInput.value = "";
-        passcodeInput.focus();
-        lockForm.classList.remove("shake");
-        void lockForm.offsetWidth;
-        lockForm.classList.add("shake");
-      }
-    });
-  }
+  lockForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (checkPasscode(passcodeInput.value)) {
+      lockError.hidden = true;
+      unlockSite();
+    } else {
+      lockError.hidden = false;
+      passcodeInput.value = "";
+      passcodeInput.focus();
+      lockForm.classList.remove("shake");
+      void lockForm.offsetWidth;
+      lockForm.classList.add("shake");
+    }
+  });
 
   let particles = [];
   let typingTimer = null;

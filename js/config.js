@@ -3,15 +3,16 @@ const CONFIG = {
   from: "Hashir",
   // Share this with Nimra (or change it). Case-insensitive.
   passcode: "Nimra",
-  tagline: "Eight months in. Forever starts on September 3.",
+  tagline: "Eight months of falling for you. Forever begins September 3.",
 
   letter: [
     "My dearest Nimra,",
-    "I have only known you since January — eight months that somehow feel like a lifetime. In that short stretch you became the person I trust with my whole heart, and the one I cannot imagine a tomorrow without.",
-    "In two weeks, on September 3, I get to marry you. This little site is not a big gift. It is just me saying thank you for choosing us, for walking toward that day with me, and for making every ordinary moment feel like something worth keeping.",
-    "Happy birthday, meri jaan. From January to forever — I am so glad it was you.",
-    "Yours, always,",
-    "Hashir"
+    "From the moment January brought you into my life, my heart has not been the same. Eight months — and somehow it feels like I have loved you across a thousand quiet mornings, late-night drives, and every smile you never knew I was saving. ♥",
+    "You are my peace, my favorite thought, my home before we even share a name. When you laugh, the world softens. When you are near, everything in me settles into place.",
+    "In two weeks, on September 3, I get to stand beside you and promise forever. This little letter is only a fraction of what I feel — but I needed you to see it written: I choose you. Again. And again. And for every birthday still to come. 💕",
+    "Happy birthday, meri jaan. My love. My almost-wife. The girl who turned eight months into a lifetime.",
+    "Yours, completely — today, on September 3, and for every forever after,",
+    "Hashir ♥"
   ],
 
   memories: [
