@@ -92,6 +92,120 @@ body {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 191, 36, 0.12);
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.lock-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-content: center;
+  padding: 24px;
+}
+
+.lock-screen.hide {
+  animation: introOut 0.55s ease forwards;
+  pointer-events: none;
+}
+
+.lock-card {
+  width: min(360px, 100%);
+  border-radius: 22px;
+  padding: 32px 26px 28px;
+  text-align: center;
+}
+
+.lock-kicker {
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.lock-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.65rem;
+  color: var(--gold);
+  text-shadow: 0 0 18px rgba(252, 211, 77, 0.35);
+  margin: 10px 0 8px;
+}
+
+.lock-hint {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 22px;
+}
+
+.lock-input {
+  width: 100%;
+  border: 1px solid var(--gold-border);
+  background: rgba(18, 3, 10, 0.55);
+  color: var(--text);
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-size: 1.15rem;
+  letter-spacing: 0.35em;
+  text-align: center;
+  outline: none;
+  font-family: inherit;
+}
+
+.lock-input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(252, 211, 77, 0.18);
+}
+
+.lock-error {
+  margin-top: 12px;
+  color: #fb7185;
+  font-size: 0.85rem;
+}
+
+.lock-btn {
+  margin-top: 18px;
+  width: 100%;
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 18px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: #12030a;
+  background: linear-gradient(180deg, #fde68a, var(--gold));
+}
+
+.lock-btn:active {
+  transform: scale(0.98);
+}
+
+.lock-card.shake {
+  animation: lockShake 0.4s ease;
+}
+
+@keyframes lockShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  50% { transform: translateX(8px); }
+  75% { transform: translateX(-5px); }
+}
+
+.intro[hidden],
+.app[hidden],
+.lock-screen[hidden] {
+  display: none !important;
+}
+
 .intro {
   position: fixed;
   inset: 0;

@@ -2,6 +2,10 @@
   const canvas = document.getElementById("celebration-canvas");
   const ctx = canvas.getContext("2d");
   const hearts = document.getElementById("heart-container");
+  const lockScreen = document.getElementById("lock-screen");
+  const lockForm = document.getElementById("lock-form");
+  const passcodeInput = document.getElementById("passcode-input");
+  const lockError = document.getElementById("lock-error");
   const intro = document.getElementById("intro");
   const app = document.getElementById("app");
   const letterBody = document.getElementById("letter-body");
@@ -12,8 +16,40 @@
   const cakeCaption = document.getElementById("cake-caption");
   const musicBtn = document.getElementById("music-btn");
   const music = document.getElementById("bg-music");
+  const unlockKey = "nimra-birthday-unlocked";
 
   document.getElementById("tagline").textContent = CONFIG.tagline;
+
+  function unlockSite() {
+    sessionStorage.setItem(unlockKey, "1");
+    lockScreen.classList.add("hide");
+    intro.hidden = false;
+    setTimeout(() => lockScreen.remove(), 550);
+  }
+
+  function checkPasscode(value) {
+    return String(value || "").trim().toLowerCase() === String(CONFIG.passcode || "").trim().toLowerCase();
+  }
+
+  if (sessionStorage.getItem(unlockKey) === "1") {
+    lockScreen.remove();
+    intro.hidden = false;
+  } else {
+    lockForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (checkPasscode(passcodeInput.value)) {
+        lockError.hidden = true;
+        unlockSite();
+      } else {
+        lockError.hidden = false;
+        passcodeInput.value = "";
+        passcodeInput.focus();
+        lockForm.classList.remove("shake");
+        void lockForm.offsetWidth;
+        lockForm.classList.add("shake");
+      }
+    });
+  }
 
   let particles = [];
   let typingTimer = null;

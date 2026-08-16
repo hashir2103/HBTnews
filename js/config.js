@@ -1,6 +1,8 @@
 const CONFIG = {
   name: "Nimra",
   from: "Hashir",
+  // Share this with Nimra (or change it). Case-insensitive.
+  passcode: "0309",
   tagline: "Eight months in. Forever starts on September 3.",
 
   letter: [
